@@ -19,7 +19,7 @@
 ```bash
 # Clone and setup
 git clone https://github.com/AshishPatel14S/A-B-Test-Analysis.git
-cd 04-ab-test-analysis
+cd A-B-Test-Analysis
 pip install -r requirements.txt
 
 # Run analysis
