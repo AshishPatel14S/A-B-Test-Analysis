@@ -209,9 +209,9 @@ Metrics that should NOT be negatively impacted:
 ## Common Pitfalls Avoided
 
 1. **Multiple Comparisons:** Applied Bonferroni correction for segments
-3. **Simpson's Paradox:** Checked for confounding variables
-4. **Novelty Effects:** Excluded first 3 days of data
-5. **Sample Ratio Mismatch:** Verified 50/50 split (χ² = 0.12, p = 0.73)
+2. **Simpson's Paradox:** Checked for confounding variables
+3. **Novelty Effects:** Excluded first 3 days of data
+4. **Sample Ratio Mismatch:** Verified 50/50 split (χ² = 0.12, p = 0.73)
 
 ---
 
@@ -247,13 +247,13 @@ jupyter notebook                # Explore notebooks
 
 ---
 
-## Customization Ideas
+## Future Scope
 
-1. **Bayesian Analysis:** Add posterior probability calculations
-2. **Sequential Testing:** Implement group sequential designs
-3. **Multi-armed Bandits:** Compare with explore/exploit strategies
-4. **Causal Inference:** Add propensity score matching for observational data
-5. **Automated Reports:** Generate PDF reports with recommendations
+1. Add sequential testing to handle early stopping decisions without inflating false positive rates
+2. Explore multi-armed bandit approaches as an alternative to fixed A/B splits for faster optimization
+3. Build a customer lifetime value (CLV) model to weight conversions by predicted long-term revenue, not just order value
+4. Add propensity score matching to enable causal inference on observational data where random assignment isn't possible
+5. Automate the reporting pipeline to generate stakeholder-ready PDF summaries on a scheduled basis
 
 ---
 
