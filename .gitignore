@@ -1,0 +1,35 @@
+# Data files
+data/raw/
+data/processed/
+!data/sample/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated reports (optional to keep)
+# reports/
+
+# Temporary
+*.tmp
+*.temp
+.cache/
