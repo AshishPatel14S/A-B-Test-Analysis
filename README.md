@@ -18,7 +18,7 @@
 
 ```bash
 # Clone and setup
-git clone <your-repo-url>
+git clone https://github.com/AshishPatel14S/A-B-Test-Analysis.git
 cd 04-ab-test-analysis
 pip install -r requirements.txt
 
@@ -271,6 +271,6 @@ jupyter notebook                # Explore notebooks
 
 ## Author
 
-Ashish Patel | [LinkedIn](#) | [GitHub](#)
+Ashish Patel | [LinkedIn](https://www.linkedin.com/in/ashish-patel-39b50b292/) | [GitHub](https://github.com/AshishPatel14S)
 
 

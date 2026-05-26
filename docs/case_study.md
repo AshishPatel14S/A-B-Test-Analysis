@@ -136,6 +136,6 @@ The analysis includes:
 
 ---
 
-**Code:** [GitHub Repository Link](#)  
+**Code:** [GitHub Repository](https://github.com/AshishPatel14S/A-B-Test-Analysis)  
 **Full Report:** [ab_test_report.md](../reports/ab_test_report.md)  
 **Contact:** ashishpatelap1403@gmail.com
