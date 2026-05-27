@@ -109,9 +109,9 @@ The new checkout flow should be rolled out to 100% of users because:
 
 1. **Statistically significant** improvement (p < 0.001)
 2. **Practically significant** lift (+18% relative)
-3. **Consistent across all segments** (desktop, mobile, new/returning)
+3. **Positive lift across major device and user-type segments** (desktop, mobile, tablet, new/returning users)
 4. **No negative guardrail impacts**
-5. **High confidence** in $9.9M annualized revenue lift
+5. **Estimated** $9.9M annualized revenue lift under stated traffic and AOV assumptions
 
 ---
 
@@ -133,7 +133,7 @@ The analysis includes:
 - **Hypothesis testing** (frequentist and Bayesian)
 - **Power analysis** and sample size calculation
 - **Confidence interval** construction
-- **Multiple comparison** corrections
+- **Exploratory segmentation** across device and user-type groups
 - **Segmentation analysis**
 - **Business impact** quantification
 - **Stakeholder communication**

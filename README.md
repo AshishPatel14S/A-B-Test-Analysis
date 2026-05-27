@@ -240,7 +240,7 @@ jupyter notebook                # Explore notebooks
 2. **Practically significant** lift (+1.95pp, +18.0% relative)
 3. **No negative impact** on guardrail metrics
 4. **Consistent across segments** (desktop, mobile, new/returning)
-5. **High confidence** in business impact ($9.9M annualized revenue lift)
+5. **Estimated** $9.9M annualized revenue lift under stated traffic and AOV assumptions
 
 ### ⚠️ Caveats
 
@@ -263,7 +263,7 @@ jupyter notebook                # Explore notebooks
 - **Hypothesis testing** (frequentist and Bayesian)
 - **Power analysis** and sample size calculation
 - **Confidence interval** construction
-- **Multiple comparison** corrections
+- **Exploratory segmentation** across device and user-type groups
 - **Segmentation analysis** 
 - **Business impact** quantification
 - **Data visualization** for stakeholder communication
