@@ -224,23 +224,14 @@ def main():
         generate_data()
         df = load_data()
 
-    # Exclude first 3 days to control for novelty effect
-    df['timestamp'] = pd.to_datetime(df['timestamp'])
-    start_date = df['timestamp'].min()
-    df['day'] = (df['timestamp'] - start_date).dt.days
-    df_clean = df[df['day'] >= 3].copy()
-    print(f"\n🗓️ Novelty Effect Exclusion:")
-    print(f"   Excluded first 3 days: {len(df) - len(df_clean):,} users removed")
-    print(f"   Remaining: {len(df_clean):,} users")
-
     print(f"\n📊 Dataset:")
     print(f"   Total users: {len(df):,}")
     print(f"   Control: {len(df[df['variant']=='control']):,}")
     print(f"   Treatment: {len(df[df['variant']=='treatment']):,}")
 
     # Calculate summary statistics
-    control = df_clean[df_clean['variant'] == 'control']
-    treatment = df_clean[df_clean['variant'] == 'treatment']
+    control = df[df['variant'] == 'control']
+    treatment = df[df['variant'] == 'treatment']
     
     control_conversions = control['converted'].sum()
     control_total = len(control)
@@ -258,16 +249,9 @@ def main():
     
     # Segment analysis
     print("\n📊 Segment Analysis...")
-    segment_by_device = segment_analysis(df_clean, 'device')
-    segment_by_user = segment_analysis(df_clean, 'new_user')
+    segment_by_device = segment_analysis(df, 'device')
+    segment_by_user = segment_analysis(df, 'new_user')
     all_segments = pd.concat([segment_by_device, segment_by_user])
-
-    # Bonferroni correction for multiple comparisons
-    n_segments = len(df_clean['device'].unique()) + 2  # devices + new/returning
-    bonferroni_alpha = 0.05 / n_segments
-    print(f"\n⚠️ Multiple Testing Correction:")
-    print(f"   Number of segment tests: {n_segments}")
-    print(f"   Bonferroni-corrected α: {bonferroni_alpha:.4f}")
 
     # Business impact
     business_impact = calculate_business_impact(results)
@@ -278,7 +262,7 @@ def main():
     
     # Generate visualizations
     project_root = Path(__file__).parent.parent
-    plot_all_results(df_clean, results, project_root / 'docs' / 'img')
+    plot_all_results(df, results, project_root / 'docs' / 'img')
     
     # Generate report
     generate_report(

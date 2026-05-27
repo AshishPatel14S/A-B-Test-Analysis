@@ -9,7 +9,7 @@
 ## TL;DR
 
 - **What:** Complete A/B test analysis framework with statistical rigor
-- **Business Impact:** New checkout flow increased conversion by 1.95pp (95% CI: 1.55%-2.35%), worth $9.9M ARR
+- **Business Impact:** New checkout flow increased conversion by 1.95pp (95% CI: 1.55%-2.35%), worth $9.9M in annualized revenue lift
 - **Stack:** Python, SciPy, Statsmodels, Plotly, Jupyter
 
 ---
@@ -85,7 +85,7 @@ An e-commerce company wants to test a new checkout flow redesign. Before rolling
 | Z-test | 9.55 | < 0.001 | ✅ Significant |
 | Fisher's Exact | - | < 0.001 | ✅ Significant |
 
-**Confidence Level:** 99.9% (p < 0.001)
+**Confidence Level:** Statistically significant at p < 0.001; 95% confidence interval for the lift excludes zero
 
 ### Business Impact
 
@@ -102,7 +102,7 @@ An e-commerce company wants to test a new checkout flow redesign. Before rolling
 ## Project Structure
 
 ```
-04-ab-test-analysis/
+A-B-Test-Analysis/
 ├── data/
 │   ├── raw/                    # Original experiment data
 │   ├── processed/              # Cleaned data
@@ -210,10 +210,9 @@ Metrics that should NOT be negatively impacted:
 
 ## Common Pitfalls Avoided
 
-1. **Novelty Effect:** Excluded first 3 days of data to avoid inflated early treatment effect
-2. **Multiple Comparisons:** Applied Bonferroni correction across device and user-type segments
-3. **Sample Ratio Mismatch:** Verified exact 50/50 split (χ² = 0.00, p = 1.00) — no randomization issues detected
-4. **Segment-level review:** Checked for heterogeneous treatment effects across device and user type before recommending full rollout
+1. **Sample Ratio Mismatch:** Verified exact 50/50 split (χ² = 0.00, p = 1.00) — no randomization issues detected
+2. **Segment-level review:** Checked that the treatment effect was directionally consistent across device and user-type groups before recommending rollout
+3. **Guardrail monitoring:** Tracked secondary metrics (AOV, cart abandonment, error rate, page load time) to ensure no negative side effects
 
 ---
 
@@ -239,12 +238,12 @@ jupyter notebook                # Explore notebooks
 2. **Practically significant** lift (+1.95pp, +18.0% relative)
 3. **No negative impact** on guardrail metrics
 4. **Consistent across segments** (desktop, mobile, new/returning)
-5. **High confidence** in business impact ($9.9M ARR)
+5. **High confidence** in business impact ($9.9M annualized revenue lift)
 
 ### ⚠️ Caveats
 
 - Long-term effects unknown (recommend follow-up analysis at 30/60/90 days)
-- Tablet segment shows smaller effect (consider separate optimization)
+- Tablet segment shows the largest device-level lift (+2.97pp); worth monitoring separately post-rollout
 - External validity: Results may not generalize to holiday traffic
 
 ---

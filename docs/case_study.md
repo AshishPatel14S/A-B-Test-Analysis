@@ -6,7 +6,7 @@
 
 ### TL;DR
 
-Conducted rigorous statistical analysis of checkout flow A/B test, finding a +1.95pp lift (18% relative improvement) in conversion rate with 99.9% statistical significance, translating to $9.9M annual revenue impact.
+Conducted rigorous statistical analysis of checkout flow A/B test, finding a +1.95pp lift (18% relative improvement) in conversion rate, statistically significant at p < 0.001, translating to $9.9M in annualized revenue lift.
 
 ---
 
@@ -45,7 +45,7 @@ An e-commerce company redesigned their checkout flow to reduce friction. Before 
 
 **Key Checks:**
 - Sample Ratio Mismatch (SRM) test
-- Multiple comparison correction (Bonferroni)
+- Segment-level consistency check across device and user type
 - Confidence intervals (Wilson score)
 - Effect size (Cohen's h)
 
@@ -65,9 +65,10 @@ An e-commerce company redesigned their checkout flow to reduce friction. Before 
 - Confidence Level: 99.9%
 - P(Treatment > Control): 100%
 
-**Business Impact:**
-- Monthly Revenue Lift: $828,750
-- Annual Revenue Lift: $9.9M
+**Business Impact** (assuming 500,000 monthly visitors, $85 AOV)**
+- Additional monthly conversions: ~9,750
+- Monthly revenue lift: $828,750
+- Annualized revenue lift: ~$9.9M
 
 ---
 
@@ -75,11 +76,13 @@ An e-commerce company redesigned their checkout flow to reduce friction. Before 
 
 | Segment | Control | Treatment | Lift | Significant? |
 |---------|---------|-----------|------|--------------|
-| Desktop | 12.5% | 14.7% | +2.2pp | ✅ Yes |
-| Mobile | 8.9% | 10.8% | +1.9pp | ✅ Yes |
-| Tablet | 11.1% | 12.6% | +1.5pp | ✅ Yes |
+| Desktop | 12.51% | 14.81% | +2.30pp | ✅ Yes |
+| Mobile | 9.16% | 10.58% | +1.42pp | ✅ Yes |
+| Tablet | 10.88% | 13.85% | +2.97pp | ✅ Yes |
 | New Users | 8.14% | 9.77% | +1.63pp | ✅ Yes |
 | Returning | 12.30% | 14.41% | +2.11pp | ✅ Yes |
+
+> *Segment results are exploratory and should be used for monitoring, not as separate rollout decisions.*
 
 **Key Insight:** Returning users showed the larger absolute lift (+2.11pp); new users showed a stronger relative improvement (+20.1%) — both segments benefited significantly from the streamlined checkout.
 
@@ -107,7 +110,7 @@ The new checkout flow should be rolled out to 100% of users because:
 2. **Practically significant** lift (+18% relative)
 3. **Consistent across all segments** (desktop, mobile, new/returning)
 4. **No negative guardrail impacts**
-5. **High confidence** in $9.9M annual impact
+5. **High confidence** in $9.9M annualized revenue lift
 
 ---
 

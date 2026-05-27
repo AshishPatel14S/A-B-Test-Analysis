@@ -4,24 +4,24 @@
 
 **Test:** New Checkout Flow vs. Original  
 **Duration:** 14 days  
-**Sample Size:** 82,011 users  
+**Sample Size:** 100,000 users  
 
 ### Key Finding
 
-The new checkout flow **increased conversion rate by 1.99 percentage points** 
-(from 10.69% to 12.68%), 
-representing a **18.6% relative improvement**.
+The new checkout flow **increased conversion rate by 1.95 percentage points** 
+(from 10.84% to 12.79%), 
+representing a **18.0% relative improvement**.
 
 This result is **statistically significant** (p < 0.001) with 95% confidence interval 
-[1.55%, 2.43%].
+[1.55%, 2.35%].
 
 ### Business Impact
 
 | Metric | Value |
 |--------|-------|
-| Monthly Additional Conversions | 9,937 |
-| Monthly Revenue Lift | $844,700 |
-| Annual Revenue Lift | $10,136,396 |
+| Monthly Additional Conversions | 9,750 |
+| Monthly Revenue Lift | $828,750 |
+| Annual Revenue Lift | $9,945,000 |
 
 ---
 
@@ -40,22 +40,22 @@ with no negative impact on guardrail metrics.
 
 | Variant | Users | Conversions | Rate | 95% CI |
 |---------|-------|-------------|------|--------|
-| Control | 41,121 | 4,397 | 10.69% | [10.40%, 11.00%] |
-| Treatment | 40,890 | 5,185 | 12.68% | [12.36%, 13.01%] |
+| Control | 50,000 | 5,421 | 10.84% | [10.57%, 11.12%] |
+| Treatment | 50,000 | 6,396 | 12.79% | [12.50%, 13.09%] |
 
 ### Statistical Tests
 
 | Test | Statistic | p-value | Significant? |
 |------|-----------|---------|--------------|
-| Chi-squared | 78.30 | 0.0000 | ✅ Yes |
-| Z-test | 8.86 | 0.0000 | ✅ Yes |
+| Chi-squared | 91.04 | 0.0000 | ✅ Yes |
+| Z-test | 9.55 | 0.0000 | ✅ Yes |
 | Fisher's Exact | - | 0.0000 | ✅ Yes |
 
 ### Bayesian Analysis
 
 - P(Treatment > Control) = 100.0%
-- Expected Lift: 1.99pp
-- 95% Credible Interval: [1.55%, 2.43%]
+- Expected Lift: 1.95pp
+- 95% Credible Interval: [1.55%, 2.35%]
 
 ---
 
@@ -65,9 +65,9 @@ with no negative impact on guardrail metrics.
 
 | Device | Control | Treatment | Lift |
 |--------|---------|-----------|------|
-| Desktop | 12.39% | 14.69% | +2.30pp |
-| Mobile | 9.03% | 10.49% | +1.46pp |
-| Tablet | 10.57% | 13.80% | +3.23pp |
+| Desktop | 12.51% | 14.81% | +2.30pp |
+| Mobile | 9.16% | 10.58% | +1.42pp |
+| Tablet | 10.88% | 13.85% | +2.97pp |
 
 ---
 
@@ -76,9 +76,9 @@ with no negative impact on guardrail metrics.
 ### Sample Ratio Mismatch (SRM)
 
 - Expected Ratio: 0.5
-- Actual Ratio: 0.5014
-- Chi-squared: 0.65
-- p-value: 0.4199
+- Actual Ratio: 0.5000
+- Chi-squared: 0.00
+- p-value: 1.0000
 - Status: **OK**
 
 ---
