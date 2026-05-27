@@ -78,10 +78,10 @@ An e-commerce company redesigned their checkout flow to reduce friction. Before 
 | Desktop | 12.5% | 14.7% | +2.2pp | ✅ Yes |
 | Mobile | 8.9% | 10.8% | +1.9pp | ✅ Yes |
 | Tablet | 11.1% | 12.6% | +1.5pp | ✅ Yes |
-| New Users | 7.4% | 9.5% | +2.1pp | ✅ Yes |
-| Returning | 12.7% | 14.5% | +1.8pp | ✅ Yes |
+| New Users | 8.14% | 9.77% | +1.63pp | ✅ Yes |
+| Returning | 12.30% | 14.41% | +2.11pp | ✅ Yes |
 
-**Key Insight:** New users showed the largest improvement, suggesting the streamlined flow particularly helps first-time buyers.
+**Key Insight:** Returning users showed the larger absolute lift (+2.11pp); new users showed a stronger relative improvement (+20.1%) — both segments benefited significantly from the streamlined checkout.
 
 ---
 

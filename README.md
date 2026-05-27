@@ -81,8 +81,8 @@ An e-commerce company wants to test a new checkout flow redesign. Before rolling
 
 | Test | Statistic | p-value | Result |
 |------|-----------|---------|--------|
-| Chi-squared | 94.7 | < 0.001 | ✅ Significant |
-| Z-test | 9.73 | < 0.001 | ✅ Significant |
+| Chi-squared | 91.04 | < 0.001 | ✅ Significant |
+| Z-test | 9.55 | < 0.001 | ✅ Significant |
 | Fisher's Exact | - | < 0.001 | ✅ Significant |
 
 **Confidence Level:** 99.9% (p < 0.001)
@@ -113,7 +113,7 @@ An e-commerce company wants to test a new checkout flow redesign. Before rolling
 │   └── 03_segmentation.ipynb        # Segment deep-dives
 ├── src/
 │   ├── data_generator.py       # Generate sample data
-│   ├── statistics.py           # Statistical tests
+│   ├── ab_statistics.py        # Statistical tests
 │   ├── visualization.py        # Plotting functions
 │   ├── analyze.py              # Main analysis script
 │   └── power_analysis.py       # Power calculations
@@ -168,7 +168,7 @@ Pre-experiment sample size calculation:
 - Minimum detectable effect: 1%
 - Power: 80%
 - Significance level: 5%
-- **Required sample:** ~15,000 per variant
+- **Required sample:** ~17,755 per variant
 
 ---
 
@@ -186,10 +186,10 @@ Pre-experiment sample size calculation:
 
 | Type | Control | Treatment | Lift | Significant? |
 |------|---------|-----------|------|--------------|
-| New Users | 8.5% | 10.9% | +2.4pp | ✅ Yes |
-| Returning | 15.2% | 17.1% | +1.9pp | ✅ Yes |
+| New Users | 8.14% | 9.77% | +1.63pp | ✅ Yes |
+| Returning | 12.30% | 14.41% | +2.11pp | ✅ Yes |
 
-**Insight:** New users benefit more from the streamlined checkout!
+**Insight:** Returning users showed the larger absolute lift (+2.11pp); new users showed a stronger relative improvement (+20.1%), suggesting the streamlined flow helps both segments differently.
 
 ---
 
@@ -197,9 +197,11 @@ Pre-experiment sample size calculation:
 
 Metrics that should NOT be negatively impacted:
 
+> *Note: Cart abandonment, page load time, and error rate are simulated to demonstrate how shipment decisions should consider secondary business indicators. AOV is computed directly from experiment data.*
+
 | Metric | Control | Treatment | Change | Status |
 |--------|---------|-----------|--------|--------|
-| Avg Order Value | $84.50 | $85.20 | +0.8% | ✅ OK |
+| Avg Order Value | $84.71 | $85.10 | +0.5% | ✅ OK |
 | Cart Abandonment | 68.2% | 65.1% | -3.1pp | ✅ Improved |
 | Page Load Time | 2.1s | 2.0s | -4.8% | ✅ OK |
 | Error Rate | 0.3% | 0.2% | -33% | ✅ OK |
@@ -208,10 +210,10 @@ Metrics that should NOT be negatively impacted:
 
 ## Common Pitfalls Avoided
 
-1. **Multiple Comparisons:** Applied Bonferroni correction for segments
-2. **Simpson's Paradox:** Checked for confounding variables
-3. **Novelty Effects:** Excluded first 3 days of data
-4. **Sample Ratio Mismatch:** Verified 50/50 split (χ² = 0.12, p = 0.73)
+1. **Novelty Effect:** Excluded first 3 days of data to avoid inflated early treatment effect
+2. **Multiple Comparisons:** Applied Bonferroni correction across device and user-type segments
+3. **Sample Ratio Mismatch:** Verified exact 50/50 split (χ² = 0.00, p = 1.00) — no randomization issues detected
+4. **Segment-level review:** Checked for heterogeneous treatment effects across device and user type before recommending full rollout
 
 ---
 
