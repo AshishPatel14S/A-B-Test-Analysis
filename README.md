@@ -85,7 +85,7 @@ An e-commerce company wants to test a new checkout flow redesign. Before rolling
 | Z-test | 9.55 | < 0.001 | ✅ Significant |
 | Fisher's Exact | - | < 0.001 | ✅ Significant |
 
-**Confidence Level:** Statistically significant at p < 0.001; 95% confidence interval for the lift excludes zero
+**Inference:** Statistically significant at p < 0.001; the 95% confidence interval for lift excludes zero
 
 ### Business Impact
 
@@ -133,8 +133,10 @@ A-B-Test-Analysis/
 
 ### 1. Hypothesis Testing
 
-**Null Hypothesis (H₀):** No difference in conversion rates  
-**Alternative (H₁):** Treatment has higher conversion rate
+**Null Hypothesis (H₀):** No difference in conversion rates between control and treatment  
+**Alternative (H₁):** Conversion rates differ between control and treatment
+
+The observed difference favored treatment, supporting the business recommendation to ship the new checkout flow.
 
 **Tests Used:**
 - **Chi-squared test:** Standard for comparing proportions
@@ -250,11 +252,9 @@ jupyter notebook                # Explore notebooks
 
 ## Future Scope
 
-1. Add sequential testing to handle early stopping decisions without inflating false positive rates
-2. Explore multi-armed bandit approaches as an alternative to fixed A/B splits for faster optimization
-3. Build a customer lifetime value (CLV) model to weight conversions by predicted long-term revenue, not just order value
-4. Add propensity score matching to enable causal inference on observational data where random assignment isn't possible
-5. Automate the reporting pipeline to generate stakeholder-ready PDF summaries on a scheduled basis
+1. Automate stakeholder-ready report generation on a scheduled basis
+2. Add longer-term post-rollout monitoring (30/60/90 day retention tracking)
+3. Track additional guardrail metrics such as refund rate, support tickets, and repeat purchase rate
 
 ---
 

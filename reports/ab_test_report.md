@@ -29,7 +29,7 @@ This result is **statistically significant** (p < 0.001) with 95% confidence int
 
 **✅ SHIP THE TREATMENT**
 
-The new checkout flow shows strong, statistically significant improvement across all user segments 
+The new checkout flow shows strong, statistically significant improvement overall, with positive lift across major device and user-type segments 
 with no negative impact on guardrail metrics.
 
 ---

@@ -62,8 +62,9 @@ An e-commerce company redesigned their checkout flow to reduce friction. Before 
 
 **Statistical Significance:**
 - p-value: < 0.001
-- Confidence Level: 99.9%
-- P(Treatment > Control): 100%
+- Statistical significance: p < 0.001
+- 95% CI for lift: [1.55pp, 2.35pp]
+- P(Treatment > Control): >99.9% (Bayesian estimate)
 
 **Business Impact** (assuming 500,000 monthly visitors, $85 AOV)**
 - Additional monthly conversions: ~9,750

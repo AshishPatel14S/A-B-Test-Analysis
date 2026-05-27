@@ -111,24 +111,6 @@ def generate_ab_test_data():
     return df
 
 
-def add_novelty_effect(df):
-    """Add novelty effect to first few days (optional realism)."""
-    df = df.copy()
-    
-    # First 3 days have slightly higher treatment effect (novelty)
-    first_days = df['timestamp'] < df['timestamp'].min() + timedelta(days=3)
-    treatment_first_days = first_days & (df['variant'] == 'treatment')
-    
-    # 10% of treatment users in first 3 days get artificial boost
-    boost_mask = treatment_first_days & (np.random.random(len(df)) < 0.1)
-    
-    # This is just for demonstration - in real analysis we'd exclude these
-    df.loc[boost_mask & (df['converted'] == 0), 'novelty_flag'] = 1
-    df['novelty_flag'] = df.get('novelty_flag', 0).fillna(0).astype(int)
-    
-    return df
-
-
 def generate_guardrail_metrics(df):
     """Generate guardrail metric data."""
     print("\n🛡️ Generating guardrail metrics...")

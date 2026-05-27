@@ -126,7 +126,7 @@ This result is **statistically significant** (p < 0.001) with 95% confidence int
 
 **✅ SHIP THE TREATMENT**
 
-The new checkout flow shows strong, statistically significant improvement across all user segments 
+The new checkout flow shows strong, statistically significant improvement overall, with positive lift across major device and user-type segments 
 with no negative impact on guardrail metrics.
 
 ---
@@ -250,7 +250,8 @@ def main():
     # Segment analysis
     print("\n📊 Segment Analysis...")
     segment_by_device = segment_analysis(df, 'device')
-    segment_by_user = segment_analysis(df, 'new_user')
+    df['user_type'] = df['new_user'].map({1: 'New Users', 0: 'Returning Users'})
+    segment_by_user = segment_analysis(df, 'user_type')
     all_segments = pd.concat([segment_by_device, segment_by_user])
 
     # Business impact

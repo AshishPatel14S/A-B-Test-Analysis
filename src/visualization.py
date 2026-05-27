@@ -312,6 +312,6 @@ def plot_all_results(df: pd.DataFrame, results: dict, output_dir: str):
     )
     
     # 6. Power analysis
-    plot_power_analysis(summary['control_rate'], save_path=output_path / 'power_analysis.png')
+    plot_power_analysis(0.125, save_path=output_path / 'power_analysis.png')
     
     print(f"\n✅ All visualizations saved to {output_path}")
